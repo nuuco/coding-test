@@ -27,7 +27,8 @@
 ```javascript
 /*공통 부분
 1. fs 모듈을 가져온다.
-2. 플랫폼이 linux면 '/dev/stdin'에서 입력값을 받아오고, 아니라면 현재 폴더의 './input.txt'에서 입력값을 받아와라.
+2. 플랫폼이 linux면 '/dev/stdin'에서 입력값을 받아오고, 아니라면 현재 폴더의 './input.txt'에서 입력값을 받아온다. 
+    (/dev/stdin 는 백준 제출 후 채점 시 입력값 받아오는 경로)
 3. __dirname === 현재 실행 중인 폴더의 절대 경로 
 */
 const fs = require('fs');
