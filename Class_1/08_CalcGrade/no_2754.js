@@ -1,0 +1,49 @@
+const fs = require('fs');
+const filePath = process.platform === 'linux' ? '/dev/stdin' : __dirname + '/input.txt';
+
+const input = fs.readFileSync(filePath).toString().trim();
+
+switch(input) {
+    case "A+": 
+        console.log("4.3");
+        break;
+    case "A0": 
+        console.log("4.0");
+        break;
+    case "A-": 
+        console.log("3.7");
+        break;
+
+    case "B+": 
+        console.log("3.3");
+        break;
+    case "B0": 
+        console.log("3.0");
+        break;
+    case "B-": 
+        console.log("2.7");
+        break;
+
+    case "C+": 
+        console.log("2.3");
+        break;
+    case "C0": 
+        console.log("2.0");
+        break;
+    case "C-": 
+        console.log("1.7");
+        break;
+
+    case "D+": 
+        console.log("1.3");
+        break;
+    case "D0": 
+        console.log("1.0");
+        break;
+    case "D-": 
+        console.log("0.7");
+        break;
+    default:
+        console.log("0.0");
+        break;
+}
