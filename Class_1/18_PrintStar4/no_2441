@@ -1,0 +1,10 @@
+const fs = require('fs');
+const filePath = process.platform === 'linux' ? '/dev/stdin' : __dirname + '/input.txt';
+
+const n = Number(fs.readFileSync(filePath).toString().trim());
+const result = [];
+for(let i = n; i > 0; i--) {
+  result.push(" ".repeat(n - i) + "*".repeat(i));
+}
+
+console.log(result.join('\n'));
