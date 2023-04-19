@@ -1,0 +1,16 @@
+const fs = require('fs');
+const filePath = process.platform === 'linux' ? '/dev/stdin' : __dirname + '/input.txt';
+
+const [t, ...input] = fs.readFileSync(filePath).toString().trim().split('\n');
+
+//유클리드 호제법을 사용한 최대공약수와 최소공배수 구하기
+const gcd = (a, b) => a % b === 0 ? b : gcd(b, a % b);
+const lcm = (a, b) => a * b / gcd(a, b);
+
+const result = [];
+for(let el of input) {
+  const [a, b] = el.split(' ').map(Number);
+  result.push(`${lcm(a,b)} ${gcd(a,b)}`);
+}
+
+console.log(result.join('\n'));
